@@ -147,7 +147,7 @@ void free_entries(entry *p)
   {
     entry *del = p;
     p = p->next;
-    realloc ( del , 0 );
+    realloc(del,0);
   }  
 }
 
@@ -249,7 +249,7 @@ int search(FILE *db_file,char *name )											/* TBD */
     }
     p = p->next;
   }
-  free_entries(base)
+  free_entries(base);
   return success;  
 }
 
@@ -265,7 +265,7 @@ void list(FILE *db_file)
     p=p->next;
   }
   													/* TBD print total count */
-  printf( "Total entries ; %s " , count );
+  printf( "Total entries ; %d " , count );
   free_entries(base);
 }
 
@@ -297,7 +297,7 @@ int delete(FILE *db_file, char *name)
         base = p->next ;
       else
         prev->next = del->next ;
-      realloc( p , 0 );
+      realloc(p,0);
       deleted++;
     }
   prev = p;
