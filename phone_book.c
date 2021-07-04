@@ -296,7 +296,7 @@ int delete(FILE *db_file, char *name)
       if ( prev == NULL )
         base = p->next ;
       else
-        prev->next = del->next ;
+        prev->next = p->next ;
       realloc(p,0);
       deleted++;
     }
